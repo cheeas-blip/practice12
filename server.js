@@ -7,6 +7,12 @@ app.get('/api/message', (req, res) => {
   res.json({ message: greeting });
 });
 
-app.listen(3000, () => {
-  console.log('Server running');
+app.get('/', (req, res) => {
+  res.send('Go to /api/message');
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
